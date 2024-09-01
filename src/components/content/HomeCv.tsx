@@ -1,3 +1,5 @@
+import { TypeAnimation } from 'react-type-animation';
+
 const HomeCV = () => {
      return (
           <>
@@ -11,13 +13,29 @@ const HomeCV = () => {
                               <div className="content hero">
                                    <div className="inner_content">
                                         <div className="image_wrap">
-                                             <img src="img/hero/img.jpg" alt="hero" />
+                                             <img src="img/hero/me1.jpg" alt="hero" />
                                         </div>
                                         <div className="name_holder">
-                                             <h3>Alan <span>Michaelis</span></h3>
+                                             <h3>Nguyen Anh <span>Linh</span></h3>
                                         </div>
                                         <div className="text_typing">
-                                             <p>I'm a <span className="arlo_tm_animation_text_word"></span></p>
+                                             <p>I'm a
+                                                  &nbsp;
+                                                  <TypeAnimation
+                                                       sequence={[
+                                                            // Same substring at the start will only be typed out once, initially
+                                                            ' Freelancer123',
+                                                            3000, // wait 1s before replacing "Mice" with "Hamsters"
+                                                            ' UI/UX design',
+                                                            3000,
+                                                            ' Web developer',
+                                                            3000
+                                                       ]}
+                                                       wrapper="span"
+                                                       speed={50}
+                                                       style={{ fontSize: '24px', display: 'inline-block' }}
+                                                       repeat={Infinity} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                                                  />
+                                             </p>
                                         </div>
                                    </div>
                               </div>
