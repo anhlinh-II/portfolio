@@ -1,8 +1,11 @@
 import aboout from '@/assets/img/about/550x6400.jpg';
 import me from '@/assets/img/about/550x640.jpg';
 import myCV from '@/assets/hoidanit.pdf';
+import { useState } from 'react';
+import { TypeAnimation } from 'react-type-animation';
 
 const About = () => {
+
      return (
           <>
                <div className="arlo_tm_section relative" id="about">
@@ -29,42 +32,58 @@ const About = () => {
                                         </div>
                                         <div className="rightbox">
                                              <div className="arlo_tm_mini_title_holder">
-                                                  <h4>I'm Alan Michaelis and <span className="arlo_tm_animation_text_word"></span></h4>
+                                                  <h4>Hi there...! I'm a
+                                                       &nbsp;
+                                                       <TypeAnimation
+                                                            sequence={[
+                                                                 // Same substring at the start will only be typed out once, initially
+                                                                 ' Freelancer123',
+                                                                 3000, // wait 1s before replacing "Mice" with "Hamsters"
+                                                                 ' UI/UX design',
+                                                                 3000,
+                                                                 ' Web developer',
+                                                                 3000
+                                                            ]}
+                                                            wrapper="span"
+                                                            speed={50}
+                                                            style={{ fontSize: '24px', display: 'inline-block' }}
+                                                            repeat={Infinity} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}></TypeAnimation>
+                                                  </h4>
+
                                              </div>
                                              <div className="definition">
-                                                  <p>Hi! My name is <strong>Alan Michaelis</strong>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.</p>
+                                                  <p>
+                                                       Xin chào! Mình tên là <strong>Anh Linh</strong>. Vốn là một sinh viên ngành công nghệ thông tin, nhưng cơ mà mình lại không thích code ^_^
+                                                       <br />
+                                                       <br />
+                                                       Tuy vậy mình vẫn có hiểu biết chút xíu về Java, Spring Ecosystem, Javascript, ReactJS, Redux, NextJS và SQL (Dòng đời xô đẩy ấy mà -.-)
+                                                  </p>
                                              </div>
                                              <div className="about_short_contact_wrap">
                                                   <ul>
                                                        <li>
-                                                            <span><label>Birthday:</label> XX.XX.2004</span>
+                                                            <span><label>Ngày sinh:</label> XX.XX.2004</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Age:</label> 21</span>
+                                                            <span><label>Giới tính:</label> Nam</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>City:</label> Ha Noi, Viet Nam</span>
+                                                            <span><label>Trường:</label> Đại học Kinh tế Quốc Dân</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Interests:</label> Soccer, Pickleball</span>
+                                                            <span><label>Chuyên ngành:</label> Công nghệ thông tin</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Study:</label> NEU</span>
+                                                            <span><label>Github:</label> anhlinh-II.github.io</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Degree:</label> Bachelor's</span>
+                                                            <span><label>Facebook:</label> Ahn Linhh</span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Website:</label> <a href="#">www.me.com</a></span>
+                                                            <span><label>Instagram:</label> <a href="#">anhlinh_II</a></span>
                                                        </li>
                                                        <li>
-                                                            <span><label>Mail:</label> <a href="mailto:example@gmail.com">hihihi&#64;gmail.com</a></span>
-                                                       </li>
-                                                       <li>
-                                                            <span><label>Phone:</label> <a href="#">+84 83 742 1572</a></span>
-                                                       </li>
-                                                       <li>
-                                                            <span><label>Instagram:</label> <a href="#">&#64;anhlinh_II</a></span>
+                                                            <span><label>Mail:</label> <a href="mailto:example@gmail.com">linhnguyenanh75&#64;gmail.com</a></span>
                                                        </li>
                                                   </ul>
                                              </div>
