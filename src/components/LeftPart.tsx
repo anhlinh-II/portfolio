@@ -1,4 +1,5 @@
 import desktopLogo from '@/assets/img/logo/desktop-logo.png';
+import { FaInstagram, FaGithub, FaLinkedin, FaFacebook, FaTiktok } from "react-icons/fa";
 
 const LeftPart = () => {
      return (
@@ -14,17 +15,17 @@ const LeftPart = () => {
                                         <li><a href="#about">About</a></li>
                                         <li><a href="#skills">Skills</a></li>
                                         <li><a href="#project">Projects</a></li>
-                                        <li><a href="#portfolio">Portfolio</a></li>
+                                        <li><a href="#contact">Contact</a></li>
                                    </ul>
                               </div>
                               <div className="leftpart_bottom">
                                    <div className="social_wrap">
                                         <ul>
-                                             <li><a href="#"><i className="xcon-facebook"></i></a></li>
-                                             <li><a href="#"><i className="xcon-twitter"></i></a></li>
-                                             <li><a href="#"><i className="xcon-linkedin"></i></a></li>
-                                             <li><a href="#"><i className="xcon-instagram"></i></a></li>
-                                             <li><a href="#"><i className="xcon-behance"></i></a></li>
+                                             <li><a href="https://www.facebook.com/caodz.gtvlyyen" target="_blank"><FaFacebook /></a></li>
+                                             <li><a href="https://www.linkedin.com/in/h%E1%BB%93ng-anh-ph%E1%BA%A5n-b0256b272/" target="_blank"><FaLinkedin /></a></li>
+                                             <li><a href="https://www.instagram.com/anhlinh_ll/" target="_blank"><FaInstagram /></a></li>
+                                             <li><a href="https://www.tiktok.com/@kinkin.04.z" target="_blank"><FaTiktok /></a></li>
+                                             <li><a href="https://github.com/anhlinh-II" target="_blank"><FaGithub /></a></li>
                                         </ul>
                                    </div>
                               </div>
