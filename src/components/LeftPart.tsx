@@ -34,9 +34,12 @@ const LeftPart = (props: IProps) => {
                                    </ul>
                               </div>
                          </div>
-                         <a className={ props.showLeftPart ? "arlo_tm_resize" : "arlo_tm_resize opened"} href="#"><i className={ props.showLeftPart ? "xcon-angle-left" : "xcon-angle-left opened"}
-                         onClick={() => props.setShowLeftPart(!props.showLeftPart)}
-                         ></i></a>
+                         <a
+                              onClick={() => props.setShowLeftPart(!props.showLeftPart)}
+                              className={props.showLeftPart ? "arlo_tm_resize" : "arlo_tm_resize opened"} href="#"
+                         >
+                              <i className={props.showLeftPart ? "xcon-angle-left" : "xcon-angle-left opened"}></i>
+                         </a>
                     </div>
                </div>
           </>

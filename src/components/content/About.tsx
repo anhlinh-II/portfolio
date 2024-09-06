@@ -1,10 +1,32 @@
 import aboout from '@/assets/img/about/550x6400.jpg';
 import me from '@/assets/img/about/550x640.jpg';
 import myCV from '@/assets/hoidanit.pdf';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import Parallax from 'parallax-js';
 
 const About = () => {
+
+     const sceneEl = useRef(null);
+
+     useEffect(() => {
+          if (sceneEl && sceneEl.current) {
+               const parallaxInstance = new Parallax(sceneEl.current, {
+                    relativeInput: true,
+                    hoverOnly: true
+               })
+
+               parallaxInstance.enable();
+
+               return () => parallaxInstance.disable();
+          }
+     }, [])
+
+     // return (
+     //      <div ref={sceneEl}>
+     //           {/* html */}
+     //      </div>
+     // )
 
      return (
           <>
@@ -18,13 +40,15 @@ const About = () => {
                               <div className="arlo_tm_about_wrap">
                                    <div className="author_wrap">
                                         <div className="leftbox">
-                                             <div className="about_image_wrap parallax" data-relative-input="true">
-                                                  <div className="image layer" data-depth="0.1">
+                                             <div ref={sceneEl} className="about_image_wrap parallax" data-relative-input="true">
+                                                  <div className="image layer" data-depth="0.3">
                                                        <img src={aboout} alt="550x640" />
-                                                       <div className="inner" data-img-url={me}></div>
+                                                       <div className="inner" data-img-url={me}
+                                                            style={{ backgroundImage: `url(${me})` }}
+                                                       ></div>
                                                   </div>
-                                                  <div className="border layer" data-depth="0.2">
-                                                       <img src="img/about/550x640.jpg" alt="550x640" />
+                                                  <div className="border layer" data-depth="0.7">
+                                                       <img src={me} alt="550x640" />
                                                        <div className="inner"></div>
                                                   </div>
                                              </div>
