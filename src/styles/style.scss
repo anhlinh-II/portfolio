@@ -225,15 +225,22 @@ body {
     font-weight: 400;
 }
 
-svg {
-    fill: currentcolor;
-    width: 15px;
-    height: 15px;
-}
+// svg {
+//     fill: currentcolor;
+//     width: 15px;
+//     height: 15px;
+// }
 
 img.svg {
     width: 15px;
     height: 15px;
+}
+
+.icon {
+    .svg {
+        height: unset;
+        width: unset;
+    }
 }
 
 .arlo_tm_wrapper_all {
@@ -1185,10 +1192,12 @@ img.svg {
     box-sizing: border-box;
     background-color: $background-color_5;
     padding-top: 90px;
+
     &:last-child {
         padding-bottom: 90px;
         margin-bottom: 100px;
     }
+
     // padding: 90px 0px;
     // margin-bottom: 100px;
 

@@ -1,9 +1,27 @@
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
-import cameraDiagram from '@/assets/img/svg/camera-diaphragm.svg';
+import { IoLogoReact } from "react-icons/io5";
+import { BsArrowRight } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+
+interface IProject {
+     image: JSX.Element;
+     title: string;
+     shortDescription: string;
+     detail: {
+          description: string;
+          technology: string;
+          member: number;
+          role: string;
+          demo: string;
+          github: string;
+     }
+}
 
 const Project = () => {
-     const [isModalOpen, setIsModalOpen] = useState(false);
+     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+     const [dataDetail, setDataDetail] = useState<IProject | null>(null)
 
      const showModal = () => {
           setIsModalOpen(true);
@@ -17,84 +35,129 @@ const Project = () => {
           setIsModalOpen(false);
      };
 
-     const dataProjects = [
+     const dataProjects: IProject[] = [
           {
-               image: cameraDiagram,
-               title: "Website clone tiki",
+               image: <IoLogoReact
+                    color='#2bebfd'
+                    size={50}
+               />,
+               title: "Website clone Tiki",
                shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
                detail: {
-                    description: "", // mieu ta du an
-                    technology: "", // cong nghe su dung
-                    member: "",    // bao nhieu member
-                    role: "",
-                    demo: "",  // link video, deploy
-                    github: ""
+                    description: "Xây dựng web thương mại điện tử bán sách",
+                    technology: "ReactJS 18, Redux Toolkit, MySQL, JavaSpring",
+                    member: 1,
+                    role: "one for all",
+                    demo: "demotiki.com.vn",
+                    github: "anhlinh-II.github.io/tiki-clone"
 
                }
           },
           {
-               image: cameraDiagram,
-               title: "Website clone tiki",
+               image: <FaInstagram
+                    color='#f7109c'
+                    size={50}
+               />,
+               title: "Website clone Instagram",
                shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
                detail: {
-                    description: "", // mieu ta du an
-                    technology: "", // cong nghe su dung
-                    member: "",    // bao nhieu member
-                    role: "",
-                    demo: "",  // link video, deploy
-                    github: ""
+                    description: "Xây dựng mạng xã hội giúp kết nối mọi người",
+                    technology: "ReactJS, MySQL, JavaSpring",
+                    member: 3,
+                    role: "team lead",
+                    demo: "demo.com.vn",
+                    github: "anhlinh-II.github.io/instagram-clone"
 
                }
           },
           {
-               image: cameraDiagram,
-               title: "Website clone tiki",
+               image: <FaTwitter
+                    color='#1c8ded'
+                    size={50}
+               />,
+               title: "Website clone Twitter",
                shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
                detail: {
-                    description: "", // mieu ta du an
-                    technology: "", // cong nghe su dung
-                    member: "",    // bao nhieu member
-                    role: "",
-                    demo: "",  // link video, deploy
-                    github: ""
+                    description: "clone twitter",
+                    technology: "ReactJS, JavaSpring",
+                    member: 2,
+                    role: "FrontEnd Dev",
+                    demo: "demotwitter.com.vn",
+                    github: "anhlinh-II.github.io/twitter-clone"
 
                }
           }
      ]
+
+     const handleCloseModal = () => {
+          setIsModalOpen(false);
+          setDataDetail(null);
+     }
      return (
           <>
-               <Button type="primary" onClick={showModal}>
-                    Open Modal
-               </Button>
-               <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+               <Modal
+                    title={dataDetail && dataDetail.title ? `Dự án ${dataDetail.title}` : ""}
+                    open={isModalOpen}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                    footer={null}
+                    maskClosable={false}
+               >
+
+                    {
+                         dataDetail &&
+                         <ul>
+                              <li>Miêu tả: {dataDetail.detail.description}</li>
+                              <li>Công nghệ: {dataDetail.detail.technology}</li>
+                              <li>Số thành viên: {dataDetail.detail.member}</li>
+                              <li>Vai trò: {dataDetail.detail.role}</li>
+                              <li>Demo:
+                                   <a href={dataDetail.detail.demo}>{dataDetail.detail.demo}</a>
+                              </li>
+                              <li>github:
+                                   &nbsp;
+                                   <a href={dataDetail.detail.github}>{dataDetail.detail.github}</a>
+                              </li>
+                         </ul>
+                    }
+
                </Modal>
                <div className="arlo_tm_section" id="project">
                     <div className="arlo_tm_services_wrap">
                          <div className="container">
                               <div className="arlo_tm_title_holder">
                                    <h3>Các dự án đã hoàn thiện</h3>
-                                   <span>Meet our amazing services</span>
+                                   <span>Bao gồm dự án cá nhân và teamwork</span>
                               </div>
                               <div className="list_wrap">
                                    <ul>
                                         {dataProjects.map((item, index) => {
                                              console.log(item.image)
                                              return (
-                                                  <li>
-                                                       <div className="inner">
+                                                  <li key={`${index}-project`} style={{cursor : "pointer"}}>
+                                                       <div className="inner"
+                                                            onClick={() => {
+                                                                 setDataDetail(item)
+                                                                 setIsModalOpen(true);
+                                                            }}
+                                                            >
                                                             <div className="icon">
-                                                                 <embed className="svg" src={item.image} />
-                                                                 {/* <svg xmlns="http://www.w3.org/2000/svg"></svg> */ }
-                                                                 
+                                                                 {item.image}
+
                                                             </div>
                                                             <div className="title_service">
                                                                  <h3>{item.title}</h3>
                                                             </div>
                                                             <div className="text">
                                                                  <p>{item.shortDescription}</p>
+                                                            </div>
+                                                            <div className='view-detail' style={{ padding: "5px 0" }}>
+                                                                 <span style={{ cursor: 'pointer' }}>
+                                                                      <BsArrowRight />
+                                                                      &nbsp;
+                                                                      Xem chi tiết
+                                                                 </span>
+
                                                             </div>
                                                        </div>
                                                   </li>
