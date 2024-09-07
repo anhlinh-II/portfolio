@@ -122,7 +122,7 @@ const Project = () => {
                     }
 
                </Modal>
-               <div className="arlo_tm_section" id="project">
+               <div className="arlo_tm_section" id="projects">
                     <div className="arlo_tm_services_wrap">
                          <div className="container">
                               <div className="arlo_tm_title_holder">

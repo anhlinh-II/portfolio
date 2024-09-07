@@ -33,7 +33,7 @@ const HomeCV = () => {
                                                             // Same substring at the start will only be typed out once, initially
                                                             ' Backend Developer',
                                                             3000, // wait 1s before replacing "Mice" with "Hamsters"
-                                                            ' UI/UX design',
+                                                            ' UI/UX designer',
                                                             3000,
                                                             ' Web developer',
                                                             3000
