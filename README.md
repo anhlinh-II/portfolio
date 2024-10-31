@@ -1,1 +1,1 @@
-this is my portfolio website using javascript
+this is my portfolio website using typescript
