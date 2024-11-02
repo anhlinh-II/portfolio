@@ -1,1 +1,2 @@
-this is my portfolio website using typescript
+this is my portfolio website using typescript and scss
+
